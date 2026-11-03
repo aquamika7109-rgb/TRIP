@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>深圳香港六天五夜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFCF6;--ink:#3E3A39;--coral:#F2A497;--yellow:#F6D27A;--sky:#A8D3E6;--green:#B9DAA5;--r:24px;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Huninn","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.6;font-size:16px}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:var(--paper);border-bottom:3px solid var(--ink);padding:calc(8px + env(safe-area-inset-top,0px)) 10px 8px;display:flex;gap:6px;justify-content:center;overflow-x:auto}
+nav a{flex:none;color:var(--ink);text-decoration:none;border:3px solid var(--ink);border-radius:999px;padding:2px 12px;font-size:14px;background:#fff}
+nav a:nth-child(1){background:var(--coral)}nav a:nth-child(2){background:var(--yellow)}nav a:nth-child(3){background:var(--sky)}nav a:nth-child(4){background:var(--green)}nav a:nth-child(5){background:var(--coral)}
+nav a:active{transform:translateY(2px)}
+main{max-width:560px;margin:0 auto;padding:calc(64px + 8px) 16px 40px;overflow-x:hidden}
+section{margin-top:28px}
+h1{font-size:30px;margin:8px 0 2px;line-height:1.2}
+h2{font-size:22px;margin:0 0 12px;display:inline-block;background:var(--yellow);border:3px solid var(--ink);border-radius:999px;padding:0 16px}
+.card{background:#fff;border:3px solid var(--ink);border-radius:var(--r);padding:14px 16px;box-shadow:4px 4px 0 var(--ink)}
+.hero{border:3px solid var(--ink);border-radius:32px;overflow:hidden;background:var(--sky);margin-top:6px}
+.hero svg{display:block;width:100%;height:auto}
+.sub{margin:0 0 12px;opacity:.8}
+.count{display:flex;gap:8px;margin-top:10px}
+.count div{flex:1;text-align:center;border:3px solid var(--ink);border-radius:18px;padding:4px 0;background:var(--yellow)}
+.count div:nth-child(2){background:var(--coral)}.count div:nth-child(3){background:var(--green)}.count div:nth-child(4){background:var(--sky)}
+.count b{display:block;font-size:26px;line-height:1.2}.count span{font-size:12px}
+.flight{margin-bottom:14px}
+.flight .row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:6px 0}
+.flight .big{font-size:26px;line-height:1}.flight small{display:block;font-size:12px;opacity:.75}
+.flight .mid{flex:1;text-align:center}
+.flight .mid svg{width:100%;max-width:90px;height:22px}
+.tag{display:inline-block;border:3px solid var(--ink);border-radius:999px;padding:0 10px;font-size:12px;line-height:1.5;margin-right:4px;background:#fff;white-space:nowrap}
+.t-air{background:var(--sky)}.t-car{background:var(--yellow)}.t-metro{background:var(--green)}.t-walk{background:var(--coral)}.t-stay{background:#fff}.t-tip{background:var(--paper);border-style:dashed}
+.t-must{background:var(--coral);transform:rotate(-3deg)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px}
+.tabs button{flex:none;font:inherit;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:18px;padding:2px 12px;text-align:center;cursor:pointer;line-height:1.3}
+.tabs button small{display:block;font-size:11px}
+.tabs button[aria-selected=true]{background:var(--yellow);transform:translateY(-3px);box-shadow:0 4px 0 var(--ink)}
+.dayhead{margin:4px 0 14px;font-size:18px}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;border-left:3px dashed var(--ink)}
+.tl li{position:relative;margin-bottom:14px;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--i)*70ms)}
+.tl li::before{content:"";position:absolute;left:-22px;top:12px;width:16px;height:16px;border:3px solid var(--ink);border-radius:50%;background:var(--c,var(--coral))}
+.tl .time{font-size:13px;opacity:.8}
+.tl h3{margin:0;font-size:17px}
+.tl p{margin:4px 0 0;font-size:14px}
+@keyframes pop{0%{opacity:0;transform:translateY(18px) scale(.92)}100%{opacity:1;transform:none}}
+.todo label{display:flex;gap:10px;align-items:center;padding:6px 0;cursor:pointer;border-bottom:2px dotted var(--ink)}
+.todo label:last-child{border:0}
+.todo input{appearance:none;-webkit-appearance:none;flex:none;width:26px;height:26px;border:3px solid var(--ink);border-radius:9px;background:#fff;margin:0;cursor:pointer}
+.todo input:checked{background:var(--green)}
+.todo input:checked::after{content:"✓";display:block;text-align:center;line-height:20px;font-weight:bold}
+.todo input:checked+span{text-decoration:line-through;opacity:.55}
+.todo input:active{transform:scale(.9)}
+.stay{margin-bottom:14px}.stay h3{margin:0 0 4px;font-size:18px}.stay p{margin:2px 0;font-size:14px}
+footer{text-align:center;margin-top:30px;font-size:13px;opacity:.7}
+.cloud{animation:drift 9s ease-in-out infinite alternate}.cloud.b{animation-duration:13s;animation-direction:alternate-reverse}
+.plane{animation:fly 11s linear infinite}
+.boat{animation:bob 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.sun{animation:spin 24s linear infinite;transform-box:fill-box;transform-origin:center}
+.wave{animation:drift 4s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-10px)}to{transform:translateX(12px)}}
+@keyframes fly{from{transform:translate(-80px,6px)}to{transform:translate(440px,-14px)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="選單"><a href="#top">首頁</a><a href="#flight">航班</a><a href="#days">行程</a><a href="#todo">待辦</a><a href="#stay">住宿</a></nav>
+<main id="top">
+<div class="hero" aria-hidden="true">
+<svg viewBox="0 0 360 210" xmlns="http://www.w3.org/2000/svg" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect width="360" height="210" fill="#A8D3E6" stroke="none"/>
+<g class="sun"><circle cx="300" cy="46" r="22" fill="#F6D27A"/><path d="M300 10v8M300 74v8M264 46h8M328 46h8" fill="none"/></g>
+<g class="cloud"><path d="M30 52q0-14 14-14 6-10 18-4 12-2 14 10 10 2 8 12H34q-6-2-4-4z" fill="#FFFCF6"/></g>
+<g class="cloud b"><path d="M170 30q0-10 10-10 5-7 13-3 9 0 10 8 7 1 6 9h-36q-4-1-3-4z" fill="#FFFCF6"/></g>
+<g class="plane"><path d="M10 40l30-8 8-14 6 2-4 12 16-3 6-6 4 2-3 9 3 9-4 2-6-6-16-3 4 12-6 2-8-14z" fill="#FFFCF6"/></g>
+<rect x="18" y="96" width="34" height="76" rx="8" fill="#F2A497"/>
+<rect x="56" y="70" width="40" height="102" rx="8" fill="#FFFCF6"/>
+<path d="M112 172V84l24-22 24 22v88z" fill="#B9DAA5"/>
+<rect x="166" y="104" width="34" height="68" rx="8" fill="#F6D27A"/>
+<rect x="204" y="80" width="38" height="92" rx="8" fill="#F2A497"/>
+<rect x="246" y="112" width="30" height="60" rx="8" fill="#FFFCF6"/>
+<path d="M136 62V50" fill="none"/>
+<g fill="#3E3A39" stroke="none"><rect x="28" y="108" width="6" height="6" rx="2"/><rect x="38" y="124" width="6" height="6" rx="2"/><rect x="68" y="86" width="6" height="6" rx="2"/><rect x="80" y="104" width="6" height="6" rx="2"/><rect x="68" y="130" width="6" height="6" rx="2"/><rect x="130" y="110" width="6" height="6" rx="2"/><rect x="142" y="130" width="6" height="6" rx="2"/><rect x="214" y="96" width="6" height="6" rx="2"/><rect x="226" y="120" width="6" height="6" rx="2"/><rect x="176" y="120" width="6" height="6" rx="2"/></g>
+<rect x="0" y="172" width="360" height="38" fill="#7FB9D4" stroke="none"/><path d="M0 172H360" fill="none"/>
+<g class="wave" fill="none" stroke="#FFFCF6"><path d="M20 190q10-8 20 0t20 0M250 198q10-8 20 0t20 0M150 194q10-8 20 0t20 0"/></g>
+<g class="boat"><path d="M286 168h58l-8 18h-42z" fill="#FFFCF6"/><rect x="302" y="152" width="26" height="16" rx="5" fill="#F6D27A"/><path d="M315 152v-10" fill="none"/></g>
+</svg>
+</div>
+<h1>深圳香港六天五夜</h1>
+<p class="sub">2026/11/20（五）– 11/25（三）・6 人同行</p>
+<div class="card"><b id="cdTitle">距離出發還有</b>
+<div class="count" role="timer" aria-live="off"><div><b id="cd">–</b><span>天</span></div><div><b id="ch">–</b><span>時</span></div><div><b id="cm">–</b><span>分</span></div><div><b id="cs">–</b><span>秒</span></div></div></div>
+
+<section id="flight"><h2>航班</h2>
+<div class="card flight"><span class="tag t-air">去程</span><span class="tag">11/20（五）</span>
+<div class="row"><div><span class="big">21:30</span><small>桃園 TPE</small></div><div class="mid"><svg viewBox="0 0 90 22" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"><path d="M4 11h64" stroke-dasharray="2 7"/><path d="M70 11l-6-6m6 6l-6 6"/></svg><small>HB705</small></div><div style="text-align:right"><span class="big">23:30</span><small>香港 HKG</small></div></div></div>
+<div class="card flight"><span class="tag t-walk">回程</span><span class="tag">11/25（三）</span>
+<div class="row"><div><span class="big">18:40</span><small>香港 HKG</small></div><div class="mid"><svg viewBox="0 0 90 22" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"><path d="M4 11h64" stroke-dasharray="2 7"/><path d="M70 11l-6-6m6 6l-6 6"/></svg></div><div style="text-align:right"><span class="big">20:25</span><small>桃園 TPE</small></div></div></div>
+</section>
+
+<section id="days"><h2>每日行程</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="dayhead" id="dayhead"></div>
+<ul class="tl" id="tl"></ul>
+<p class="sub" style="font-size:13px">標示「待補」的項目尚未確定。</p>
+</section>
+
+<section id="todo"><h2>待辦清單</h2>
+<div class="card todo" id="todoList"></div>
+<h3 style="margin:18px 0 6px">個人行李清單</h3>
+<div class="tabs" id="mtabs"></div>
+<div class="card todo" id="memList"></div>
+<div class="card" style="margin-top:14px;background:var(--green)"><b>穿著提醒</b><p style="margin:4px 0 0;font-size:14px">深圳秋季平均約 18°C，香港 11–12 月通常舒適。採洋蔥式穿搭並帶摺疊傘，以出發前預報為準。</p></div></section>
+
+<section id="stay"><h2>住宿資訊</h2>
+<div class="card stay"><h3>深圳・福田</h3><p><span class="tag t-stay">暫定 11/21–11/24</span><span class="tag">尚未訂房</span></p><p>實際晚數依水療館是否過夜休息調整。</p></div>
+<div class="card stay"><h3>香港</h3><p><span class="tag t-stay">暫定 11/24 入住</span><span class="tag">尚未訂房</span></p><p>確認房型可住 6 人或拆房。</p></div>
+<div class="card stay" style="background:var(--yellow)"><h3>機場接送</h3><p><span class="tag t-car">包車</span>Trip.com 7 人座，香港機場 → 福田</p><p>11/21 約 00:10・799＋深夜 200（幣別待確認）</p></div>
+</section>
+<footer>祝大家旅途平安・玩得開心</footer>
+</main>
+<script>
+var D=[
+{k:"11/20",w:"五",t:"台灣 → 香港 → 深圳福田",it:[
+{tm:"21:30",h:"HB705 桃園 → 香港",tg:[["air","飛機"]],p:"飛行約 2 小時。",c:"sky"},
+{tm:"23:30",h:"抵達香港國際機場",tg:[["air","飛機"],["walk","步行"]],p:"6 人通關、領行李。與接機只隔約 40 分鐘，需向車商確認。",c:"yellow"},
+{tm:"11/21 約 00:10",h:"Trip.com 7 人座接機",tg:[["car","包車"]],p:"香港機場 → 福田水療館。799＋深夜 200，幣別與是否有其他費用待確認。",c:"yellow"},
+{tm:"凌晨",h:"福田水療館",tg:[["walk","市內"],["must","必去"]],p:"店家待定。確認凌晨可否入場、需否預約、能否休息過夜與寄放行李。",c:"coral"}]},
+{k:"11/21",w:"六",t:"深圳・室內遊樂場",it:[
+{tm:"待補",h:"室內遊樂場",tg:[["walk","市內"],["must","必去"]],p:"名稱、地址、時段、票券、身高年齡限制待補。",c:"coral"},
+{tm:"待補",h:"入住深圳住宿",tg:[["stay","住宿"]],p:"暫定 11/21–11/24，依水療是否過夜調整。尚未訂房。",c:"green"},
+{tm:"提醒",h:"先確認集合時間",tg:[["tip","提醒"]],p:"水療後先休息，避免把活動排太早。",c:"sky"}]},
+{k:"11/22",w:"日",t:"深圳・吃、逛、買",it:[
+{tm:"待補",h:"區域與餐廳",tg:[["tip","待補"]],p:"必吃清單與逛街區域待補。",c:"sky"}]},
+{k:"11/23",w:"一",t:"深圳・吃、逛、買",it:[
+{tm:"待補",h:"區域與餐廳",tg:[["tip","待補"]],p:"必買清單與逛街區域待補。",c:"sky"}]},
+{k:"11/24",w:"二",t:"深圳 → 香港",it:[
+{tm:"待補",h:"深圳前往香港",tg:[["tip","待補"]],p:"交通方式、口岸與過關時間、行李安排待確認。",c:"green"},
+{tm:"待補",h:"入住香港住宿",tg:[["stay","住宿"]],p:"暫定 11/24 入住，確認房型可住 6 人或拆房。尚未訂房。",c:"yellow"},
+{tm:"待補",h:"香港景點",tg:[["tip","待補"]],p:"晚間活動待補。",c:"sky"}]},
+{k:"11/25",w:"三",t:"香港 → 台灣",it:[
+{tm:"待補",h:"香港活動",tg:[["tip","待補"]],p:"上午活動與前往機場的交通待補。",c:"sky"},
+{tm:"15:40 前",h:"抵達香港機場",tg:[["tip","目標"]],p:"回程 18:40 起飛，預留充足時間。",c:"green"},
+{tm:"18:40",h:"香港 → 桃園",tg:[["air","飛機"]],p:"20:25 抵達桃園。",c:"sky"}]}];
+var T=["確認接機是 11/21 凌晨 00:10，不是中午 12:10","向車商確認航班延誤追蹤、免費等候、接機出口與司機聯絡方式","確認 6 人加行李可乘 7 人車，告知件數與尺寸","確認車輛可跨境福田，及口岸、夜間等附加費","確認 799＋200 的幣別、總價、付款與取消規則","決定福田水療館，確認凌晨入場、預約、6 人同時使用、休息過夜與寄放行李","確認每位成員赴深圳證件與效期（台灣居民檢查台胞證）","預訂深圳住宿（暫定 11/21–11/24）","預訂香港住宿（暫定 11/24，6 人房或拆房）","確認室內遊樂場名稱、地址、時段、票券與限制","確認深圳轉香港的日期、口岸／交通與行李安排","確認 11/25 前往機場的交通（目標 15:40 前抵達）","購買旅遊保險，並分享保單與緊急聯絡資訊","出發前 3–5 天看天氣預報，前一晚再確認"];
+var M=["護照／證件及入境文件（台灣居民確認台胞證）","機票、住宿、接機資料截圖或離線備份","旅遊保險與緊急聯絡資料","支付方式（現金／信用卡／行動支付）","手機、漫遊／網路方案、充電器","行動電源（符合航空公司規定）","個人常用藥、處方或過敏資訊","6 天衣物、內衣襪子、睡衣","薄長袖、薄外套／保暖層","好走的鞋","摺疊傘、口罩、衛生紙","個人盥洗用品、拖鞋"];
+var mem=0;
+var cls={air:"t-air",car:"t-car",metro:"t-metro",walk:"t-walk",stay:"t-stay",tip:"t-tip",must:"t-must"};
+var cur=0,st={};
+try{st=JSON.parse(localStorage.getItem("szhk-todo2")||"{}")||{}}catch(e){st={}}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function tabs(){var h="";D.forEach(function(d,i){h+='<button role="tab" aria-selected="'+(i==cur)+'" data-i="'+i+'">'+d.k+'<small>週'+d.w+'</small></button>'});document.getElementById("tabs").innerHTML=h}
+function day(){var d=D[cur];document.getElementById("dayhead").textContent="Day "+(cur+1)+"・"+d.t;
+var h="";d.it.forEach(function(x,i){h+='<li style="--i:'+i+';--c:var(--'+x.c+')"><div class="card"><div class="time">'+esc(x.tm)+'</div><h3>'+esc(x.h)+'</h3><div>'+x.tg.map(function(g){return'<span class="tag '+cls[g[0]]+'">'+esc(g[1])+'</span>'}).join("")+'</div><p>'+esc(x.p)+'</p></div></li>'});
+document.getElementById("tl").innerHTML=h}
+document.getElementById("tabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;cur=+b.dataset.i;tabs();day()});
+function chk(arr,pre,el){var h="";arr.forEach(function(t,i){var k=pre+i;h+='<label><input type="checkbox" data-k="'+k+'"'+(st[k]?" checked":"")+'><span>'+esc(t)+'</span></label>'});document.getElementById(el).innerHTML=h}
+function todo(){chk(T,"g",'todoList');chk(M,"m"+mem+"_",'memList');var h="";for(var i=0;i<6;i++)h+='<button role="tab" aria-selected="'+(i==mem)+'" data-i="'+i+'">成員 '+(i+1)+'</button>';document.getElementById("mtabs").innerHTML=h}
+function sv(e){if(!e.target.dataset.k)return;st[e.target.dataset.k]=e.target.checked;try{localStorage.setItem("szhk-todo2",JSON.stringify(st))}catch(x){}}
+document.getElementById("todoList").addEventListener("change",sv);document.getElementById("memList").addEventListener("change",sv);
+document.getElementById("mtabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;mem=+b.dataset.i;todo()});
+var go=new Date("2026-11-20T21:30:00+08:00").getTime();
+function tick(){var s=Math.floor((go-Date.now())/1000);if(s<=0){document.getElementById("cdTitle").textContent="出發囉！旅途愉快";s=0}
+function p(n){return String(n).padStart(2,"0")}
+document.getElementById("cd").textContent=Math.floor(s/86400);document.getElementById("ch").textContent=p(Math.floor(s%86400/3600));document.getElementById("cm").textContent=p(Math.floor(s%3600/60));document.getElementById("cs").textContent=p(s%60)}
+tabs();day();todo();tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
